@@ -1,0 +1,46 @@
+{% if trmnl.plugin_settings.custom_fields_values.home_side == "left" %}
+{% assign first_abbrev = home_team_abbrev %}
+{% assign first_name = home_team_name %}
+{% assign second_abbrev = away_team_abbrev %}
+{% assign second_name = away_team_name %}
+{% assign separator = 'x' %}
+{% else %}
+{% assign first_abbrev = away_team_abbrev %}
+{% assign first_name = away_team_name %}
+{% assign second_abbrev = home_team_abbrev %}
+{% assign second_name = home_team_name %}
+{% assign separator = '@' %}
+{% endif %}
+
+<div class="layout gap--xlarge">
+  <div class="flex flex--col gap--xsmall no-shrink">
+    <img class="image-dither" src="https://assets.nhle.com/logos/nhl/svg/{{ first_abbrev }}_light.svg" height="60">
+    <span class="title title--small">{{ first_name }}</span>
+    <span class="value value--xxsmall">{{ separator }}</span>
+    <img class="image-dither" src="https://assets.nhle.com/logos/nhl/svg/{{ second_abbrev }}_light.svg" height="60">
+    <span class="title title--small">{{ second_name }}</span>
+  </div>
+  <div class="flex flex--col">
+    <span class="value">{{ start_utc_timestamp | date: "%s" | plus: trmnl.user.utc_offset | date: "%Y-%m-%d" | l_date: "%A", trmnl.user.locale }}</span>
+    <span class="value">{{ start_utc_timestamp | date: "%s" | plus: trmnl.user.utc_offset | date: "%Y-%m-%d" | l_date: "%b %e", trmnl.user.locale }}</span>
+    <span class="value value--small">{{ start_utc_timestamp | date: "%s" | plus: trmnl.user.utc_offset | date: "%l:%M %p" }}</span>
+    <span class="value value--xxsmall">at {{ venue }}</span>
+  </div>
+</div>
+<div class="title_bar">
+  <img class="image" src="https://www.emoji.family/api/emojis/1f3d2/twemoji/svg" />
+  <span class="title">
+    Next
+    {% if trmnl.plugin_settings.custom_fields_values.team == home_team_abbrev %}
+    {{ home_team_name }}
+    {% else %}
+    {{ away_team_name }}
+    {% endif %}
+    {% if trmnl.plugin_settings.custom_fields_values.game_type == "home" %}
+    Home
+    {% elsif trmnl.plugin_settings.custom_fields_values.game_type == "away" %}
+    Away
+    {% endif %}
+    Game
+  </span>
+</div>

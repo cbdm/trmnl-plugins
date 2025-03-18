@@ -1,0 +1,63 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+polling_url: https://puckdex.cbdm.app/next/{{ game_type }}/{{ team }}
+polling_headers: ''
+custom_fields:
+- keyname: team
+  field_type: select
+  options:
+  - Anaheim Ducks: ANA
+  - Boston Bruins: BOS
+  - Buffalo Sabres: BUF
+  - Carolina Hurricanes: CAR
+  - Columbus Blue Jackets: CBJ
+  - Calgary Flames: CGY
+  - Chicago Blackhawks: CHI
+  - Colorado Avalanche: COL
+  - Dallas Stars: DAL
+  - Detroit Red Wings: DET
+  - Edmonton Oilers: EDM
+  - Florida Panthers: FLA
+  - Los Angeles Kings: LAK
+  - Minnesota Wild: MIN
+  - Montréal Canadiens: MTL
+  - New Jersey Devils: NJD
+  - Nashville Predators: NSH
+  - New York Islanders: NYI
+  - New York Rangers: NYR
+  - Ottawa Senators: OTT
+  - Philadelphia Flyers: PHI
+  - Pittsburgh Penguins: PIT
+  - Seattle Kraken: SEA
+  - San Jose Sharks: SJS
+  - St. Louis Blues: STL
+  - Tampa Bay Lightning: TBL
+  - Toronto Maple Leafs: TOR
+  - Utah Hockey Club: UTA
+  - Vancouver Canucks: VAN
+  - Vegas Golden Knights: VGK
+  - Winnipeg Jets: WPG
+  - Washington Capitals: WSH
+  default: CAR
+  name: NHL Team
+- keyname: game_type
+  field_type: select
+  options:
+  - Any Game: full
+  - Home Game: home
+  - Away Game: away
+  default: full
+  name: Next Game Type
+- keyname: home_side
+  field_type: select
+  options:
+  - Home x Away: left
+  - Away @ Home: right
+  default: left
+  name: Display Format
+name: NHL - Next Team Game
+refresh_interval: 1440
