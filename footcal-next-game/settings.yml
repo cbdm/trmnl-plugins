@@ -1,0 +1,24 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+polling_url: https://footcal.cbdm.app/next/{{ id_type }}/{{ id_num }}
+polling_headers: ''
+custom_fields:
+- keyname: id_type
+  field_type: select
+  options:
+  - Team: team
+  - Competition: comp
+  default: team
+  name: ID Type
+- keyname: id_num
+  field_type: number
+  placeholder: '1062'
+  name: FootCal ID
+  description: ID to Fetch Next Game
+  help_text: You can find this <a href="https://footcal.cbdm.app/help" class="underline">here</a>.
+name: FootCal - Next Game
+refresh_interval: 1440
