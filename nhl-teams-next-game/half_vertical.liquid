@@ -43,7 +43,7 @@
             </tr>
           </thead>
           <tbody>
-            {% assign sorted_broadcasts = where_to_watch | sort %}
+            {% assign sorted_broadcasts = where_to_watch | sort_natural %}
             {% for broadcast in sorted_broadcasts %}
             <tr>
               <td>
