@@ -25,7 +25,7 @@
     <span class="title title--small">{{ second_team_name }}</span>
   </div>
   <div class="flex flex--col no-shrink">
-    <span class="value">{{ start_utc_timestamp | date: "%s" | plus: trmnl.user.utc_offset | date: "%Y-%m-%d" | l_date: "%a, %b %e", trmnl.user.locale }}</span>
+    <span class="value">{{ start_utc_timestamp | date: "%s" | plus: trmnl.user.utc_offset | date: "%Y-%m-%d" | l_date: "%A, %b %e", trmnl.user.locale }}</span>
     <span class="value">{{ start_utc_timestamp | date: "%s" | plus: trmnl.user.utc_offset | date: "%l:%M %p" }}</span>
     <span class="value value--small">at {{ venue }}</span>
   </div>

@@ -36,7 +36,8 @@
     </div>
     <div class="row row--center">
       <div class="flex flex--col gap--large no-shrink">
-        <span class="title title--small">Broadcasts: {{ where_to_watch: join, ", " }}</span>
+        <span class="title title--small">Broadcasts: {{ where_to_watch | sort_natural | join: ", " }}
+        </span>
       </div>
     </div>
   </div>

@@ -21,7 +21,7 @@
     <span class="title title--small">{{ second_team_name }}</span>
   </div>
   <div class="flex flex--col">
-    <span class="value">{{ start_utc_timestamp | date: "%s" | plus: trmnl.user.utc_offset | date: "%Y-%m-%d" | l_date: "%A", trmnl.user.locale }}</span>
+    <span class="value">{{ start_utc_timestamp | date: "%s" | plus: trmnl.user.utc_offset | date: "%Y-%m-%d" | l_date: "%a", trmnl.user.locale }}</span>
     <span class="value">{{ start_utc_timestamp | date: "%s" | plus: trmnl.user.utc_offset | date: "%Y-%m-%d" | l_date: "%b %e", trmnl.user.locale }}</span>
     <span class="value value--small">{{ start_utc_timestamp | date: "%s" | plus: trmnl.user.utc_offset | date: "%l:%M %p" }}</span>
     <span class="value value--xxsmall">at {{ venue }}</span>
@@ -32,9 +32,9 @@
   <span class="title">
     Next
     {% if trmnl.plugin_settings.custom_fields_values.team == home_team_abbrev %}
-    {{ home_team_name }}
+    {{ home_team_abbrev }}
     {% else %}
-    {{ away_team_name }}
+    {{ away_team_abbrev }}
     {% endif %}
     {% if trmnl.plugin_settings.custom_fields_values.game_type == "home" %}
     Home

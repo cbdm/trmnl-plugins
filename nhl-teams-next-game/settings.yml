@@ -4,8 +4,15 @@ no_screen_padding: 'no'
 dark_mode: 'no'
 static_data: ''
 polling_verb: get
+framework_version: 2.3.7
+serverless_language: ''
+refresh_interval_floor: ''
 polling_url: https://puckdex.cbdm.app/next/{{ game_type }}/{{ team }}
 polling_headers: ''
+polling_body: ''
+id: 30044
+oauth_enabled: 'false'
+oauth_pkce_enabled: 'no'
 custom_fields:
 - keyname: team
   field_type: select
@@ -60,4 +67,5 @@ custom_fields:
   default: left
   name: Display Format
 name: NHL - Team's Next Game
-refresh_interval: 1440
+description: ''
+refresh_interval: 720
