@@ -1,5 +1,5 @@
-{% assign home_team = teams | split, " " | first %}
-{% assign away_team = teams | split, " " | last %}
+{% assign home_team = teams | split, " - " | first %}
+{% assign away_team = teams | split, " - " | last %}
 {% if trmnl.plugin_settings.custom_fields_values.id_type == "team" %}
 {% assign img_base_url = "https://media.api-sports.io/football/teams/" %}
 {% else %}
@@ -11,7 +11,7 @@
     <div class="item col col--center">
       <div class="content">
         <span class="value value--large">{{ home_team }} x</span>
-        <span class="value value--large">{{away_team}}</span>
+        <span class="value value--large">{{ away_team }}</span>
       </div>
     </div>
   </div>
@@ -25,6 +25,7 @@
         <span class="label label--large">{{ extra_info }}</span>
         {% else %}
         <span class="label label--large">Competition: {{ competition }}</span>
+          <span class="label label--large">Venue: {{ venue | split, "," | first }}</span>
         {% if ref != "None" %}
         <span class="label label--large">Ref: {{ ref }}</span>
         {% endif %}
